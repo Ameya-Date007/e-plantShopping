@@ -236,7 +236,6 @@ function ProductList({ onHomeClick }) {
         textDecoration: 'none',
     }
     const handleAddToCart = (product) => {
-    console.log('Adding to cart:', product);
     dispatch(addItem(product));
     setAddedToCart((prevState) => ({
         ...prevState,
@@ -295,7 +294,7 @@ function ProductList({ onHomeClick }) {
                                 <div className="product-title">{plant.name}</div>
                                 <div>{plant.description}</div>
                                 <div className='product-price'>{plant.cost}</div>
-                                <button  className="product-button" onClick={() => handleAddToCart(plant)} disabled={addedToCart[plant.name]} 
+                                <button  className="product-button" onClick={() => handleAddToCart(plant)} disabled={(addedToCart[plant.name])? true : false} 
                                  style={{
                                     backgroundColor: addedToCart[plant.name] ? 'grey' : '',
                                   }}
